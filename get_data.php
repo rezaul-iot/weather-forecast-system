@@ -1,21 +1,23 @@
-
 <?php
-header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: *"); // Optional for frontend JS
+// ✅ Must be the first line — no space before
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
 
-$conn = new mysqli("sql12.freesqldatabase.com", "sql12788274", "kXGydCElEj", "sql12788274");
+$host = "sql12.freesqldatabase.com";  // Your actual DB info
+$user = "sql12788274";
+$pass = "kXGydCElEj";
+$db   = "sql12788274";
+
+$conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(["error" => "Connection failed"]));
 }
 
-$sql = "SELECT * FROM weather_data ORDER BY id DESC LIMIT 10";
+// ✅ Only get latest one record for live display
+$sql = "SELECT * FROM weather_data ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
-$data = [];
+$data = $result->fetch_assoc();
 
-while($row = $result->fetch_assoc()) {
-    $data[] = $row;
-}
-
-echo json_encode(array_reverse($data)); // oldest first
+echo json_encode($data);
 $conn->close();
 ?>
