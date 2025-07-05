@@ -211,13 +211,9 @@
       </div>
     </div>
   </div>
-  <div class="main-layout">
-  <div class="right-column">
      <div style="margin-top: 80px;">
     <h2 class="section-title" style="color: #007BFF;">Next 3 Days Weather Forecast</h2>
     <div class="forecast-container" id="forecast"></div>
- </div>
-</div>
 </div>
 </div>
 <div style="margin-top: 80px;">
@@ -243,7 +239,7 @@
     <th>Rain (%)</th>
   </tr>
   <?php
-  $conn = new mysqli("sql12.freesqldatabase.com", "sql12788274", "kXGydCElEj", "sql12788274");
+ $conn = new mysqli("sql210.infinityfree.com", "if0_39293362", "103rezaul51", "if0_39293362_weather");
   $result = $conn->query("SELECT * FROM weather_data ORDER BY id DESC LIMIT 30");
   while($row = $result->fetch_assoc()): ?>
   <tr>
