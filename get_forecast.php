@@ -1,28 +1,27 @@
 <?php
 header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
 
-$host = " sql12.freesqldatabase.com";   // example host, replace with yours
-$user = "sql12788274";                  // your db username
-$pass = "kXGydCElEj";               // your db password
-$dbname = "sql12788274";                // your db name
+// ✅ NO spaces in variable values!
+$host = "sql12.freesqldatabase.com";
+$user = "sql12788274";
+$password = "kXGydCElEj";
+$database = "sql12788274";
 
-
-$conn = new mysqli($host, $user, $pass, $db);
+// ✅ FIXED: use correct variable names and no spaces
+$conn = new mysqli($host, $user, $password, $database);
 if ($conn->connect_error) {
-    echo json_encode(["error" => "Database connection failed"]);
-    exit;
+    die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
 $sql = "SELECT * FROM weather_forecast ORDER BY date ASC LIMIT 3";
 $result = $conn->query($sql);
 
 $data = [];
-
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
-    }
+while ($row = $result->fetch_assoc()) {
+    $data[] = $row;
 }
 
 echo json_encode($data);
+$conn->close();
 ?>
