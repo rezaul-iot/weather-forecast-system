@@ -95,8 +95,11 @@ void loop() {
 
   // HTTP POST to InfinityFree server
   if (WiFi.status() == WL_CONNECTED) {
+    
   HTTPClient http;
-  WiFiClient client;
+  //WiFiClient client;
+  WiFiClientSecure client;
+  client.setInsecure(); // ⚠️ Use only for testing — skips SSL cert verification
   http.begin(client, serverName);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   // ✅ ADD THIS LINE to fool InfinityFree into treating it like a real browser
