@@ -22,7 +22,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 const char* ssid = "NAZMUL HASAN";
 const char* password = "01945994590";
 const char* auth = "M4wDTOxN9odeN_yEiZ_s-qkttGvl5WmD";
-const String serverName = "http://rezaul.infinityfreeapp.com/insert_data.php";
+//const String serverName = "http://rezaul.infinityfreeapp.com/insert_data.php";
+const String serverName = "https://weather-forecast-system.onrender.com/insert_data.php";
 
 DHT dht(DHTPIN, DHTTYPE);
 Adafruit_BMP085 bmp;
@@ -60,7 +61,7 @@ void loop() {
   float altitude = bmp.readAltitude();
   int rainAnalog = analogRead(RAINPIN);
   float rain = map(rainAnalog, 0, 1023, 100, 0);
-  int LDR_value = analogRead(A0);
+  //int LDR_value = analogRead(A0);
 
   // Serial output
   Serial.println("----- Weather Info -----");
@@ -69,7 +70,7 @@ void loop() {
   Serial.printf("Pressure: %.2f hPa\n", pressure);
   Serial.printf("Altitude: %.2f m\n", altitude);
   Serial.printf("Rain: %.2f %%\n", rain);
-  Serial.printf("Light: %d\n", LDR_value);
+  //Serial.printf("Light: %d\n", LDR_value);
 
   // Blynk update
   Blynk.virtualWrite(V0, temperature);
@@ -77,7 +78,7 @@ void loop() {
   Blynk.virtualWrite(V2, pressure);
   Blynk.virtualWrite(V3, altitude);
   Blynk.virtualWrite(V4, rain);
-  Blynk.virtualWrite(V5, LDR_value);
+ // Blynk.virtualWrite(V5, LDR_value);
 
   // LCD output
   lcd.clear();
@@ -98,6 +99,11 @@ void loop() {
   WiFiClient client;
   http.begin(client, serverName);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  // ✅ ADD THIS LINE to fool InfinityFree into treating it like a real browser
+//http.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36");
+
+ // http.setUserAgent("Mozilla/5.0");  // <- add this line
+
 
   String data = "temperature=" + String(temperature)
               + "&humidity=" + String(humidity)
@@ -105,6 +111,9 @@ void loop() {
               + "&altitude=" + String(altitude)
               + "&rain=" + String(rain);
 
+  
+  http.setUserAgent("Mozilla/5.0");
+     
   Serial.println("----- Posting data to PHP server -----");
   Serial.println(data); // DEBUG POST STRING
 
