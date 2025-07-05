@@ -1,7 +1,7 @@
 
 <?php
 header("Content-Type: application/json");
-header("Cache-Control: no-cache, must-revalidate");
+header("Access-Control-Allow-Origin: *"); // Optional for frontend JS
 
 $conn = new mysqli("sql12.freesqldatabase.com", "sql12788274", "kXGydCElEj", "sql12788274");
 if ($conn->connect_error) {
