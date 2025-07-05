@@ -1,5 +1,5 @@
 <?php
-$host = " sql12.freesqldatabase.com";   // example host, replace with yours
+$host = "sql12.freesqldatabase.com";   // example host, replace with yours
 $user = "sql12788274";                  // your db username
 $pass = "kXGydCElEj";               // your db password
 $dbname = "sql12788274";                // your db name
