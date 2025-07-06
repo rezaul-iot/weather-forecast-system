@@ -22,7 +22,7 @@ if ($temperature !== null && $humidity !== null && $pressure !== null && $altitu
     if ($conn->query($sql) === TRUE) {
         echo "✅ Data inserted";
     } else {
-        echo "❌ Insert error: " . $conn->error;
+        echo "❌ Insert error: " . $conn->error; 
     }
 } else {
     echo "❌ Missing or invalid parameters";
