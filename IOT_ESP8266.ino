@@ -8,7 +8,7 @@
 #include <DHT.h>
 #include <Wire.h>
 #include <Adafruit_BMP085.h>
-#include <LiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h> 
 #include <math.h>
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp8266.h>
