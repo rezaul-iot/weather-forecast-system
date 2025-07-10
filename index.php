@@ -228,7 +228,7 @@
 </div>
 </div>
 <div style="margin-top: 80px;"></div>
-<h2 class="section-title" style="text-align: center; color: #007BFF;">Table: 30 Days Weather Data</h2>
+<h2 class="section-title" style="text-align: center; color: #007BFF;">Table: 30 records of Weather Data</h2>
 <table>
   <tr>
     <th>Date</th>
