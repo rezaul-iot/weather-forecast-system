@@ -10,9 +10,9 @@ warnings.filterwarnings("ignore")
 # --- Connect to DB (freesqldatabase.com) ---
 db = pymysql.connect(
     host="sql12.freesqldatabase.com",  # replace with your freesqldatabase host
-    user="sql12788274",                # your freesqldatabase username
-    password="kXGydCElEj",    # your freesqldatabase password
-    database="sql12788274",            # your freesqldatabase database name (usually same as username)
+    user="sql12790163",                # your freesqldatabase username
+    password="ihSMzzzfFT",    # your freesqldatabase password
+    database="sql12790163",            # your freesqldatabase database name (usually same as username)
     port=3306                         # default MySQL port
 )
 cursor = db.cursor()
