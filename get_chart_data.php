@@ -1,6 +1,6 @@
 <?php
 
-$conn = new mysqli("sql12.freesqldatabase.com", "sql12788274", "kXGydCElEj", "sql12788274");
+$conn = new mysqli("sql12.freesqldatabase.com", "sql12790163", "ihSMzzzfFT", "sql12790163");
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
