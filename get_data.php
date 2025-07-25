@@ -4,9 +4,9 @@ header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 
 $host = "sql12.freesqldatabase.com";  // Your actual DB info
-$user = "sql12790163";
-$pass = "ihSMzzzfFT";
-$db   = "sql12790163";
+$user = "sql12791888";
+$pass = "gKCQabmHx8";
+$db   = "sql12791888";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
