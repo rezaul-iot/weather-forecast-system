@@ -10,9 +10,9 @@ warnings.filterwarnings("ignore")
 # --- Connect to DB (freesqldatabase.com) ---
 db = pymysql.connect(
     host="sql12.freesqldatabase.com",  # replace with your freesqldatabase host
-    user="sql12791888",                # your freesqldatabase username
-    password="gKCQabmHx8",    # your freesqldatabase password
-    database="sql12791888",            # your freesqldatabase database name (usually same as username)
+    user="sql12793273",                # your freesqldatabase username
+    password="arIEIidLSx",             # your freesqldatabase password
+    database="sql12793273",            # your freesqldatabase database name (usually same as username)
     port=3306                         # default MySQL port
 )
 cursor = db.cursor()
@@ -93,3 +93,4 @@ db.commit()
 db.close()
 
 print("\n✅ Accurate 3-day weather forecast updated.")
+
