@@ -212,7 +212,7 @@
     </div>
   </div>
      <div style="margin-top: 80px;">
-    <h2 class="section-title" style="color: #007BFF;">Next 3 Days Weather Forecast</h2>
+    <h2 class="section-title" style="color: #28A745;">Next 3 Days Weather Forecast</h2>
     <div class="forecast-container" id="forecast"></div>
 </div>
 </div>
