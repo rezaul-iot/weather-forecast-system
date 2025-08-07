@@ -18,7 +18,7 @@ db = pymysql.connect(
 cursor = db.cursor()
 
 # --- Load last 100 sensor records ---
-df = pd.read_sql("SELECT * FROM weather_data ORDER BY timestamp DESC LIMIT 100", db)
+df = pd.read_sql("SELECT * FROM weather_data ORDER BY timestamp DESC LIMIT 150", db)
 df = df.sort_values(by='timestamp').reset_index(drop=True)
 
 if len(df) < 10:
@@ -93,5 +93,6 @@ db.commit()
 db.close()
 
 print("\n✅ Accurate 3-day weather forecast updated.")
+
 
 
