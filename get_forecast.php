@@ -4,9 +4,9 @@ header("Access-Control-Allow-Origin: *");
 
 // ✅ NO spaces in variable values!
 $host = "sql12.freesqldatabase.com";
-$user = "sql12793273";
-$password = "arIEIidLSx";
-$database = "sql12793273";
+$user = "sql12793927";
+$password = "yXt6FdChwy";
+$database = "sql12793927";
 
 // ✅ FIXED: use correct variable names and no spaces
 $conn = new mysqli($host, $user, $password, $database);
