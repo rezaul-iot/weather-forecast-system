@@ -239,7 +239,7 @@
     <th>Rain (%)</th>
   </tr>
   <?php
-  $conn = new mysqli("sql12.freesqldatabase.com", "sql12793273", "arIEIidLSx", "sql12793273");
+  $conn = new mysqli("sql12.freesqldatabase.com", "sql12793927", "yXt6FdChwy", "sql12793927");
   $result = $conn->query("SELECT * FROM weather_data ORDER BY id DESC LIMIT 30");
   while($row = $result->fetch_assoc()): ?>
   <tr>
