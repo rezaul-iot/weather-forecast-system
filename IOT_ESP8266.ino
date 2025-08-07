@@ -19,8 +19,8 @@
 #define ALTITUDE 1655.0
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
-const char* ssid = "NAZMUL HASAN";
-const char* password = "01945994590";
+const char* ssid = "Rezaul";
+const char* password = "rezaul123";
 const char* auth = "M4wDTOxN9odeN_yEiZ_s-qkttGvl5WmD";
 //const String serverName = "http://rezaul.infinityfreeapp.com/insert_data.php";
 const String serverName = "https://weather-forecast-system.onrender.com/insert_data.php";
